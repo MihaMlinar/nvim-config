@@ -1,7 +1,8 @@
 local opt = vim.opt
 -- lines
 opt.rnu = true
-opt.scrolloff = 999 -- Minimal number of screen lines to keep above and below the cursor.
+opt.scrolloff = 999
+opt.sidescrolloff = 999
 opt.wrap = false
 opt.cursorline = true -- Highlight the line where the cursor is on
 
