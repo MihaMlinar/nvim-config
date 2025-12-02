@@ -2,7 +2,7 @@ local opt = vim.opt
 -- lines
 opt.rnu = true
 opt.scrolloff = 999
-opt.sidescrolloff = 999
+opt.sidescrolloff = 20
 opt.wrap = false
 opt.cursorline = true -- Highlight the line where the cursor is on
 
