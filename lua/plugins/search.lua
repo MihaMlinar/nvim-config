@@ -7,6 +7,7 @@ return {
 		config = function()
 			-- keymaps
 			local builtin = require("telescope.builtin")
+
 			vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 			vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 			vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
@@ -17,6 +18,9 @@ return {
 		"ibhagwan/fzf-lua",
 		enabled = true,
 		dependencies = { "nvim-tree/nvim-web-devicons" }, -- "nvim-mini/mini.icons"
-		opts = {},
+		-- opts = {},
+		config = function()
+			require("fzf-lua").setup({ { "ivy" } })
+		end,
 	},
 }
