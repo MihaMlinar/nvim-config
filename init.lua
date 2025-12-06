@@ -4,7 +4,7 @@ require("config.keymaps")
 
 require("config.lazy")
 
-vim.lsp.enable({ "html", "lua_ls" })
+vim.lsp.enable({ "lua_ls" })
 -- Configure LSP diagnostic
 vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
 

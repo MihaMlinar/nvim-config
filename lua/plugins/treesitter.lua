@@ -14,9 +14,10 @@ return {
 					"query",
 					"markdown",
 					"markdown_inline",
-					"html",
 					"c_sharp",
 					"razor",
+
+					-- superhtml
 				},
 
 				auto_install = false,
