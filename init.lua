@@ -4,9 +4,32 @@ require("config.keymaps")
 
 require("config.lazy")
 
-vim.lsp.enable({ "lua_ls" })
--- Configure LSP diagnostic
-vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
+local vue_language_server_path = vim.fn.expand("$MASON/packages")
+	.. "/vue-language-server"
+	.. "/node_modules/@vue/language-server"
+
+local vue_plugin = {
+	name = "@vue/typescript-plugin",
+	location = vue_language_server_path,
+	languages = { "vue" },
+	configNamespace = "typescript",
+}
+-- todo: Figure out why this config setting can't be defined in a lsp/vtsls.lua folder
+-- note: maybe the settings prop isn't understood?
+vim.lsp.config("vtsls", {
+	settings = {
+		vtsls = {
+			tsserver = {
+				globalPlugins = {
+					vue_plugin,
+				},
+			},
+		},
+	},
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+})
+
+vim.lsp.enable({ "lua_ls", "vtsls", "vue_ls" })
 
 -- NOTES:
 -- <Alt + o> can trigger new line in insert mode

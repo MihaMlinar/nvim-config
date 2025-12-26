@@ -1,4 +1,8 @@
+-- Configure LSP diagnostic
+vim.diagnostic.config({ virtual_lines = { current_line = true }, virtual_text = false })
+
 return {
+	{ "neovim/nvim-lspconfig" },
 	{
 		"mason-org/mason.nvim",
 		opts = {
