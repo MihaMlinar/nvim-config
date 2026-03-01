@@ -44,19 +44,33 @@ map("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 map("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
--- LSP
-map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename symbol" })
-
 -- Plugins mappings
 -- Oil
 map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
--- FzfLua
-map("n", "<leader>ff", "<CMD>FzfLua files<CR>", { desc = "Find files on a path" })
-map("n", "<leader>fb", "<CMD>FzfLua buffers<CR>", { desc = "Find open buffers" })
-map("n", "<leader>fq", "<CMD>FzfLua quickfix<CR>", { desc = "Open quickfix list" })
-map("n", "<leader>fnc", "<CMD>FzfLua files cwd=~/.config/nvim<CR>", { desc = "Find nvim config" })
 
-map("n", "<leader>ld", "<CMD>FzfLua lsp_definitions<CR>", { desc = "LSP definitions" })
-map("n", "<leader>li", "<CMD>FzfLua lsp_implementations<CR>", { desc = "LSP implementations" })
+-- FzfLua (FIND)
+map("n", "<leader>fh", "<CMD>FzfLua helptags<CR>", { desc = "Help tags" })
+map("n", "<leader>fg", "<CMD>FzfLua live_grep<CR>", { desc = "Live grep" })
+map("n", "<leader>fb", "<CMD>FzfLua buffers<CR>", { desc = "Find open buffers" })
+map("n", "<leader>fr", "<CMD>FzfLua resume<CR>", { desc = "Resume last picker" })
+map("n", "<leader>ff", "<CMD>FzfLua files<CR>", { desc = "Find files on a path" })
+map("n", "<leader>fq", "<CMD>FzfLua quickfix<CR>", { desc = "Open quickfix list" })
+map("n", "<leader>fd", "<CMD>FzfLua diagnostics_workspace<CR>", { desc = "Workspace diagnostics" })
+map("n", "<leader>fo", "<CMD>FzfLua oldfiles<CR>", { desc = "Recent files" })
+map("n", "<leader>fk", "<CMD>FzfLua keymaps<CR>", { desc = "Keymaps" })
+map("n", "<leader>fw", "<CMD>FzfLua grep_cword<CR>", { desc = "Grep word under cursor" })
+map("v", "<leader>fw", "<CMD>FzfLua grep_visual<CR>", { desc = "Grep visual selection" })
+
+-- FzfLua (GIT)
+map("n", "<leader>gs", "<CMD>FzfLua git_status<CR>", { desc = "Git status" })
+map("n", "<leader>gc", "<CMD>FzfLua git_commits<CR>", { desc = "Git commits" })
+
+-- FzfLua (LSP)
 map("n", "<leader>lr", "<CMD>FzfLua lsp_references<CR>", { desc = "LSP refrences" })
+map("n", "<leader>ld", "<CMD>FzfLua lsp_definitions<CR>", { desc = "LSP definitions" })
+map("n", "<leader>lt", "<CMD>FzfLua lsp_typedefs<CR>", { desc = "LSP type definitions" })
+map("n", "<leader>li", "<CMD>FzfLua lsp_implementations<CR>", { desc = "LSP implementations" })
+map("n", "<leader>ls", "<CMD>FzfLua lsp_document_symbols<CR>", { desc = "LSP document symbols" })
+map("n", "<leader>lw", "<CMD>FzfLua lsp_live_workspace_symbols<CR>", { desc = "LSP workspace symbols" })
+
 map({ "n", "v" }, "<leader>ca", "<CMD>FzfLua lsp_code_actions<CR>", { desc = "Code actions" })
