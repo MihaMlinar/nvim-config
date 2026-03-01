@@ -75,4 +75,8 @@ map("n", "<leader>li", "<CMD>FzfLua lsp_implementations<CR>", { desc = "LSP impl
 map("n", "<leader>ls", "<CMD>FzfLua lsp_document_symbols<CR>", { desc = "LSP document symbols" })
 map("n", "<leader>lw", "<CMD>FzfLua lsp_live_workspace_symbols<CR>", { desc = "LSP workspace symbols" })
 
+map("n", "<leader>lh", function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "Toggle inlay hints" })
+
 map({ "n", "v" }, "<leader>ca", "<CMD>FzfLua lsp_code_actions<CR>", { desc = "Code actions" })
