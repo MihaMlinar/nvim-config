@@ -1,6 +1,8 @@
 local opt = vim.opt
 -- lines
-opt.rnu = true
+opt.number = true
+opt.relativenumber = true
+opt.signcolumn = "yes"
 opt.scrolloff = 999
 opt.sidescrolloff = 20
 opt.wrap = false
@@ -19,6 +21,9 @@ opt.sw = 2
 -- searching
 opt.ignorecase = true
 opt.smartcase = true
+
+-- undo
+opt.undofile = true
 
 -- What is the diffrence between vim.opt and vim.o
 
