@@ -60,10 +60,12 @@ map("n", "<leader>fo", "<CMD>FzfLua oldfiles<CR>", { desc = "Recent files" })
 map("n", "<leader>fk", "<CMD>FzfLua keymaps<CR>", { desc = "Keymaps" })
 map("n", "<leader>fw", "<CMD>FzfLua grep_cword<CR>", { desc = "Grep word under cursor" })
 map("v", "<leader>fw", "<CMD>FzfLua grep_visual<CR>", { desc = "Grep visual selection" })
+map("n", "<leader>fn", "<CMD>FzfLua files cwd=~/.config/nvim<CR>", { desc = "Find nvim config" })
 
 -- FzfLua (GIT)
 map("n", "<leader>gs", "<CMD>FzfLua git_status<CR>", { desc = "Git status" })
 map("n", "<leader>gc", "<CMD>FzfLua git_commits<CR>", { desc = "Git commits" })
+map("n", "<leader>gb", "<CMD>FzfLua git_branches<CR>", { desc = "Git branches" })
 
 -- FzfLua (LSP)
 map("n", "<leader>lr", "<CMD>FzfLua lsp_references<CR>", { desc = "LSP refrences" })
